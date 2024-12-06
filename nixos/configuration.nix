@@ -102,15 +102,21 @@
       tmux
       docker
       wl-clipboard
+      home-manager
 
+      #nix lsps
       nil
       nixpkgs-fmt
+
+      #web dev lsps
       typescript-language-server
       nodePackages.prettier
       emmet-language-server
       tailwindcss-language-server
       vscode-langservers-extracted
       eslint
+
+      #rust lsps
       taplo
     ];
   };
