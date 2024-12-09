@@ -133,6 +133,18 @@
             command = "prettier";
             args = [ "--parser" "css" ];
           };
+        }
+
+        {
+          name = "yaml";
+          auto-format = true;
+          language-servers = [
+            "yaml-language-server"
+          ];
+          formatter = {
+            command = "prettier";
+            args = [ "--parser" "yaml" ];
+          };
         }];
 
       language-server.tailwindcss-ls = {
@@ -143,6 +155,16 @@
       language-server.emmet-language-server = {
         command = "emmet-language-server";
         args = [ "--stdio" ];
+      };
+
+      language-server.yaml-language-server.config.yaml = {
+        format = { enable = true; };
+        validation = true;
+      };
+
+      language-server.yaml-language-server.config.yaml.schemas = {
+        "https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}";
+        "https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}";
       };
     };
   };

@@ -116,6 +116,10 @@
       vscode-langservers-extracted
       eslint
 
+      #yaml lsps
+      yaml-language-server
+      ansible-language-server
+
       #rust lsps
       taplo
     ];
