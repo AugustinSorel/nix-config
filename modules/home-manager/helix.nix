@@ -157,6 +157,18 @@
           language-servers = [
             "jdtls"
           ];
+        }
+
+        {
+          name = "markdown";
+          auto-format = true;
+          language-servers = [
+            "marksman"
+          ];
+          formatter = {
+            command = "prettier";
+            args = [ "--parser" "markdown" ];
+          };
         }];
 
       language-server.tailwindcss-ls = {

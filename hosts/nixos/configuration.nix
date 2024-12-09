@@ -123,7 +123,10 @@
       #java lsp
       jdt-language-server
 
-      #rust lsps
+      #markdown lsp
+      marksman
+
+      #toml lsp
       taplo
     ];
   };
