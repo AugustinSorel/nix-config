@@ -43,7 +43,6 @@
           language-servers = [
             "typescript-language-server"
             "tailwindcss-ls"
-            "vscode-eslint-language-server"
           ];
           formatter = {
             command = "prettier";
@@ -57,7 +56,6 @@
           language-servers = [
             "typescript-language-server"
             "tailwindcss-ls"
-            "vscode-eslint-language-server"
             "emmet-language-server"
           ];
           formatter = {
@@ -72,7 +70,6 @@
           language-servers = [
             "typescript-language-server"
             "tailwindcss-ls"
-            "vscode-eslint-language-server"
             "emmet-language-server"
           ];
           formatter = {
@@ -87,7 +84,6 @@
           language-servers = [
             "typescript-language-server"
             "tailwindcss-ls"
-            "vscode-eslint-language-server"
           ];
           formatter = {
             command = "prettier";

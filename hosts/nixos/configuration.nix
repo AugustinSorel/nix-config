@@ -114,7 +114,6 @@
       emmet-language-server
       tailwindcss-language-server
       vscode-langservers-extracted
-      eslint
 
       #yaml lsps
       yaml-language-server
