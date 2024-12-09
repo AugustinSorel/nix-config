@@ -120,6 +120,9 @@
       yaml-language-server
       ansible-language-server
 
+      #java lsp
+      jdt-language-server
+
       #rust lsps
       taplo
     ];

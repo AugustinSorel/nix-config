@@ -145,6 +145,18 @@
             command = "prettier";
             args = [ "--parser" "yaml" ];
           };
+        }
+
+        {
+          name = "java";
+          scope = "source.java";
+          injection-regex = "java";
+          file-types = [ "java" ];
+          roots = [ "pom.xml" "build.gradle" ];
+          auto-format = true;
+          language-servers = [
+            "jdtls"
+          ];
         }];
 
       language-server.tailwindcss-ls = {
