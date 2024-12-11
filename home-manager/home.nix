@@ -5,6 +5,7 @@
     outputs.homeManagerModules.shell
     outputs.homeManagerModules.git
     outputs.homeManagerModules.helix
+    outputs.homeManagerModules.tmux
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
