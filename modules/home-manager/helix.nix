@@ -144,6 +144,26 @@
         }
 
         {
+          name = "dockerfile";
+          auto-format = true;
+          language-servers = [
+            "docker-langserver"
+          ];
+        }
+
+        {
+          name = "docker-compose";
+          auto-format = true;
+          language-servers = [
+            "docker-compose-langserver"
+          ];
+          formatter = {
+            command = "prettier";
+            args = [ "--parser" "yaml" ];
+          };
+        }
+
+        {
           name = "java";
           scope = "source.java";
           injection-regex = "java";
