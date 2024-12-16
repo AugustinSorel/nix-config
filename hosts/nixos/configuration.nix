@@ -99,11 +99,14 @@
       git
       lazygit
       tmux
-      docker
       wl-clipboard
       home-manager
       google-chrome
       geary
+
+      #docker lsp
+      docker-compose-language-service
+      dockerfile-language-server-nodejs
 
       #nix lsps
       nil
