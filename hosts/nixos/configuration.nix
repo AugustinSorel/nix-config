@@ -103,6 +103,9 @@
       home-manager
       google-chrome
       geary
+      jq
+      fzf
+      httpie
 
       #docker lsps
       docker-compose-language-service
