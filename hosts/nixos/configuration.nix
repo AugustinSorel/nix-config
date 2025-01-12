@@ -106,6 +106,11 @@
       jq
       fzf
       httpie
+      collabora-online
+      libreoffice-qt
+      hunspell
+      hunspellDicts.uk_UA
+      hunspellDicts.th_TH
 
       #docker lsps
       docker-compose-language-service
