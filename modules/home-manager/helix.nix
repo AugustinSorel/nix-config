@@ -9,6 +9,10 @@
       editor = {
         line-number = "relative";
         bufferline = "always";
+        end-of-line-diagnostics = "hint";
+        inline-diagnostics = {
+          cursor-line = "error";
+        };
       };
 
       keys.normal = {
