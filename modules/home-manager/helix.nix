@@ -168,6 +168,14 @@
         }
 
         {
+          name = "haskell";
+          auto-format = true;
+          language-servers = [
+            "haskell-language-server"
+          ];
+        }
+
+        {
           name = "java";
           scope = "source.java";
           injection-regex = "java";
