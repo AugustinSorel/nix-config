@@ -91,7 +91,7 @@
           ];
           formatter = {
             command = "prettier";
-            args = [ "--parser" "javascript" ];
+            args = [ "--parser" "typescript" ];
           };
         }
 
