@@ -15,6 +15,9 @@
 
       # bind y to yank
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel wl-copy
+
+      # disable repetition
+      set-option -g repeat-time 0
     '';
   };
 }
