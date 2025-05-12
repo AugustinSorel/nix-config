@@ -126,9 +126,6 @@
       yaml-language-server
       ansible-language-server
 
-      #java lsp
-      jdt-language-server
-
       #markdown lsp
       marksman
 
