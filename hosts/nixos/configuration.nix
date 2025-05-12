@@ -107,13 +107,6 @@
       fzf
       httpie
 
-      #libreoffice
-      collabora-online
-      libreoffice-qt
-      hunspell
-      hunspellDicts.uk_UA
-      hunspellDicts.th_TH
-
       #haskell lsp
       haskell-language-server
 
