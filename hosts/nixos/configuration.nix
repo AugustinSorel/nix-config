@@ -107,9 +107,6 @@
       fzf
       httpie
 
-      #haskell lsp
-      haskell-language-server
-
       #docker lsps
       docker-compose-language-service
       dockerfile-language-server-nodejs
