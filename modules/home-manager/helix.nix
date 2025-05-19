@@ -168,14 +168,6 @@
         }
 
         {
-          name = "haskell";
-          auto-format = true;
-          language-servers = [
-            "haskell-language-server"
-          ];
-        }
-
-        {
           name = "markdown";
           auto-format = true;
           language-servers = [
