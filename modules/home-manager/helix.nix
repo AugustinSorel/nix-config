@@ -181,6 +181,19 @@
         }
 
         {
+          name = "astro";
+          auto-format = true;
+          language-servers = [
+            "tailwindcss-ls"
+            "emmet-language-server"
+          ];
+          formatter = {
+            command = "prettier";
+            args = [ "--plugin" "prettier-plugin-astro" "--parser" "astro" ];
+          };
+        }
+
+        {
           name = "markdown";
           auto-format = true;
           language-servers = [
