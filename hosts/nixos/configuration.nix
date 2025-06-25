@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -106,31 +106,6 @@
       jq
       fzf
       httpie
-
-      #docker lsps
-      docker-compose-language-service
-      dockerfile-language-server-nodejs
-
-      #nix lsps
-      nil
-      nixpkgs-fmt
-
-      #web dev lsps
-      typescript-language-server
-      nodePackages.prettier
-      emmet-language-server
-      tailwindcss-language-server
-      vscode-langservers-extracted
-
-      #yaml lsps
-      yaml-language-server
-      ansible-language-server
-
-      #markdown lsp
-      marksman
-
-      #toml lsp
-      taplo
     ];
   };
 
@@ -142,7 +117,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];

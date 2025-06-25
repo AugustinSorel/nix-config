@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.helix = {
@@ -22,6 +22,33 @@
         C-l = "select_next_sibling";
       };
     };
+
+    extraPackages = with pkgs; [
+      #web dev lsps
+      typescript-language-server
+      tailwindcss-language-server
+      emmet-language-server
+      vscode-langservers-extracted
+      nodePackages.prettier
+
+      #docker lsps
+      docker-compose-language-service
+      dockerfile-language-server-nodejs
+
+      #nix lsps
+      nil
+      nixpkgs-fmt
+
+      #toml lsp
+      taplo
+
+      #markdown lsp
+      marksman
+
+      #yaml lsps
+      yaml-language-server
+      ansible-language-server
+    ];
 
     languages = {
       language = [{
