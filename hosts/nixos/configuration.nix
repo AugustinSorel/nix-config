@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports =
@@ -94,7 +94,6 @@
     description = "augustin";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      helix
       nnn
       git
       lazygit
@@ -106,6 +105,8 @@
       jq
       fzf
       httpie
+
+      inputs.helix.packages."${pkgs.system}".default
     ];
   };
 

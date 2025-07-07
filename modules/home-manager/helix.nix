@@ -1,7 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.helix = {
+    package = inputs.helix.packages.${pkgs.system}.default;
     enable = true;
     settings = {
       theme = "onelight";
