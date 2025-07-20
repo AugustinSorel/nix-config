@@ -233,13 +233,6 @@
           };
         }];
 
-
-      #TODO: remove this line in the next helix version
-      #      https://github.com/helix-editor/helix/pull/13204
-      language-server.golangci-lint-lsp.config = {
-        command = [ "golangci-lint" "run" "--output.json.path=stdout" "--show-stats=false" "--issues-exit-code=1" ];
-      };
-
       language-server.tailwindcss-ls = {
         command = "tailwindcss-language-server";
         args = [ "--stdio" ];
