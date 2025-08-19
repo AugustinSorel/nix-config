@@ -113,6 +113,8 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  virtualisation.libvirtd.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
