@@ -49,6 +49,10 @@
       #yaml lsps
       yaml-language-server
       ansible-language-server
+
+      #typst
+      tinymist
+      typstyle
     ];
 
     languages = {
@@ -218,6 +222,14 @@
           formatter = {
             command = "prettier";
             args = [ "--plugin" "prettier-plugin-astro" "--parser" "astro" ];
+          };
+        }
+
+        {
+          name = "typst";
+          auto-format = true;
+          formatter = {
+            command = "typstyle";
           };
         }
 
