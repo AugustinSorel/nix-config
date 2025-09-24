@@ -239,6 +239,11 @@
         }
 
         {
+          name = "java";
+          auto-format = true;
+        }
+
+        {
           name = "markdown";
           auto-format = true;
           language-servers = [
