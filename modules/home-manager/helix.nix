@@ -244,6 +244,11 @@
         }
 
         {
+          name = "c-sharp";
+          auto-format = true;
+        }
+
+        {
           name = "markdown";
           auto-format = true;
           language-servers = [
