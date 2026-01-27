@@ -2,7 +2,6 @@
 
 {
   programs.helix = {
-    package = inputs.helix.packages.${pkgs.system}.default;
     enable = true;
     settings = {
       theme = "onelight";
@@ -48,7 +47,7 @@
 
       #yaml lsps
       yaml-language-server
-      ansible-language-server
+      # ansible-language-server
 
       #typst
       tinymist
@@ -231,21 +230,6 @@
           formatter = {
             command = "typstyle";
           };
-        }
-
-        {
-          name = "scala";
-          auto-format = true;
-        }
-
-        {
-          name = "java";
-          auto-format = true;
-        }
-
-        {
-          name = "c-sharp";
-          auto-format = true;
         }
 
         {
