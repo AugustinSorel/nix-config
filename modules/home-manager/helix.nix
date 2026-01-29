@@ -1,10 +1,10 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   programs.helix = {
     enable = true;
     settings = {
-      theme = "onelight";
+      theme = "onedark";
 
       editor = {
         line-number = "relative";

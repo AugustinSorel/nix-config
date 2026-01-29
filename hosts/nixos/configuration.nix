@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -47,17 +47,23 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
+  virtualisation = {
+    libvirtd.enable = true;
+    vmware.guest.enable = true;
+    docker = {
       enable = true;
-      setSocketVariable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
     };
   };
 
+
+
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -107,13 +113,23 @@
       fzf
       httpie
       helix
+
+      alacritty
+      dms-shell
+      xwayland-satellite
+      quickshell
+      fuzzel
+      dgop
+      cava
+      matugen
     ];
   };
+
 
   # Install firefox.
   programs.firefox.enable = true;
 
-  virtualisation.libvirtd.enable = true;
+  programs.niri.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
