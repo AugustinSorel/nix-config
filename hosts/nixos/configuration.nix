@@ -46,11 +46,14 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
+  virtualisation = {
+    libvirtd.enable = true;
+    docker = {
       enable = true;
-      setSocketVariable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
     };
   };
 
@@ -124,8 +127,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
-  virtualisation.libvirtd.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
