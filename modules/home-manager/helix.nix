@@ -232,21 +232,6 @@
         }
 
         {
-          name = "scala";
-          auto-format = true;
-        }
-
-        {
-          name = "java";
-          auto-format = true;
-        }
-
-        {
-          name = "c-sharp";
-          auto-format = true;
-        }
-
-        {
           name = "markdown";
           auto-format = true;
           language-servers = [
