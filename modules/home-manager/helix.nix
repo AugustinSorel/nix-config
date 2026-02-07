@@ -47,7 +47,6 @@
 
       #yaml lsps
       yaml-language-server
-      # ansible-language-server
 
       #typst
       tinymist

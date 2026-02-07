@@ -101,6 +101,7 @@
     description = "augustin";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      helix
       nnn
       git
       lazygit
@@ -112,7 +113,8 @@
       jq
       fzf
       httpie
-      helix
+      gnome-screenshot
+      vscode
 
       alacritty
       dms-shell
@@ -125,6 +127,7 @@
     ];
   };
 
+  programs.niri.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
