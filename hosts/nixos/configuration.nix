@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -55,8 +55,8 @@
   };
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -68,7 +68,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -94,6 +94,7 @@
     description = "augustin";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
+      helix
       nnn
       git
       lazygit
@@ -105,10 +106,21 @@
       jq
       fzf
       httpie
+      gnome-screenshot
+      vscode
 
-      inputs.helix.packages."${pkgs.system}".default
+      alacritty
+      dms-shell
+      xwayland-satellite
+      quickshell
+      fuzzel
+      dgop
+      cava
+      matugen
     ];
   };
+
+  programs.niri.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
