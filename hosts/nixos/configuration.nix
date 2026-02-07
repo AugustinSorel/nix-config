@@ -132,8 +132,6 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  programs.niri.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
