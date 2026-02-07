@@ -1,8 +1,7 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   programs.helix = {
-    package = inputs.helix.packages.${pkgs.system}.default;
     enable = true;
     settings = {
       theme = "onelight";
@@ -48,7 +47,6 @@
 
       #yaml lsps
       yaml-language-server
-      ansible-language-server
 
       #typst
       tinymist
