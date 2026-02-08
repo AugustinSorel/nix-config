@@ -109,8 +109,7 @@
       jq
       fzf
       httpie
-      gnome-screenshot
-      vscode
+      opencode
 
       alacritty
       dms-shell
