@@ -2,9 +2,10 @@
 
 {
   imports = [
-    outputs.homeManagerModules.shell
     outputs.homeManagerModules.git
     outputs.homeManagerModules.helix
+    outputs.homeManagerModules.niri
+    outputs.homeManagerModules.shell
     outputs.homeManagerModules.tmux
   ];
 
