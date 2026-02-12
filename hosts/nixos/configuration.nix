@@ -115,7 +115,6 @@
       dms-shell
       xwayland-satellite
       quickshell
-      fuzzel
       dgop
       cava
       matugen
