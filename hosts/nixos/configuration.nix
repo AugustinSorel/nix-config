@@ -102,7 +102,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       helix
-      nnn
+      yazi
       git
       lazygit
       tmux
