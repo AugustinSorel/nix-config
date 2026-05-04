@@ -114,6 +114,7 @@
       fzf
       httpie
       opencode
+      nerd-fonts.jetbrains-mono
 
       alacritty
       dms-shell
