@@ -33,7 +33,7 @@
 
       #docker lsps
       docker-compose-language-service
-      dockerfile-language-server-nodejs
+      dockerfile-language-server
 
       #nix lsps
       nil
