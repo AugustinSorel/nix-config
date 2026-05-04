@@ -29,7 +29,7 @@
       tailwindcss-language-server
       emmet-language-server
       vscode-langservers-extracted
-      nodePackages.prettier
+      prettier
 
       #docker lsps
       docker-compose-language-service
