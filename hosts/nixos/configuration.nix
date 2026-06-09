@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -74,6 +75,17 @@
     #media-session.enable = true;
   };
 
+  virtualisation = {
+    libvirtd.enable = true;
+    vmware.guest.enable = true;
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
+  };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -83,7 +95,7 @@
     description = "augustin";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -98,21 +110,21 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-      helix
-      yazi
-      git
-      lazygit
-      tmux
-      wl-clipboard
-      home-manager
-      google-chrome
-      jq
-      fzf
-      httpie
-      opencode
-      nerd-fonts.jetbrains-mono
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    helix
+    yazi
+    git
+    lazygit
+    tmux
+    wl-clipboard
+    home-manager
+    google-chrome
+    jq
+    fzf
+    httpie
+    opencode
+    nerd-fonts.jetbrains-mono
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
