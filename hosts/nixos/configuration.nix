@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -12,9 +12,8 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -47,20 +46,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  virtualisation = {
-    libvirtd.enable = true;
-    vmware.guest.enable = true;
-    docker = {
-      enable = true;
-      rootless = {
-        enable = true;
-        setSocketVariable = true;
-      };
-    };
-  };
-
-
-
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -90,43 +75,29 @@
     #media-session.enable = true;
   };
 
+  virtualisation = {
+    libvirtd.enable = true;
+    vmware.guest.enable = true;
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
+  };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.augustin = {
+  users.users."augustin" = {
     isNormalUser = true;
     description = "augustin";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      helix
-      yazi
-      git
-      lazygit
-      tmux
-      wl-clipboard
-      home-manager
-      google-chrome
-      geary
-      jq
-      fzf
-      httpie
-      opencode
-      nerd-fonts.jetbrains-mono
-
-      alacritty
-      dms-shell
-      xwayland-satellite
-      quickshell
-      dgop
-      cava
-      matugen
+      #  thunderbird
     ];
   };
-
-  programs.niri.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -134,12 +105,37 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
+    helix
+    yazi
+    git
+    lazygit
+    tmux
+    wl-clipboard
+    home-manager
+    google-chrome
+    jq
+    fzf
+    httpie
+    opencode
+    nerd-fonts.jetbrains-mono
+
+    alacritty
+    dms-shell
+    xwayland-satellite
+    quickshell
+    dgop
+    cava
+    matugen
   ];
+
+  programs.niri.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -166,5 +162,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "26.05"; # Did you read the comment?
 }
