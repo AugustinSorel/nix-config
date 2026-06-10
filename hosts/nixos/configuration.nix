@@ -142,6 +142,7 @@
 
     alsa-utils
     sof-firmware
+    brightnessctl
   ];
 
   programs.niri.enable = true;
