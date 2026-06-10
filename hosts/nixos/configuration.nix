@@ -125,7 +125,17 @@
     httpie
     opencode
     nerd-fonts.jetbrains-mono
+
+    alacritty
+    dms-shell
+    xwayland-satellite
+    quickshell
+    dgop
+    cava
+    matugen
   ];
+
+  programs.niri.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
