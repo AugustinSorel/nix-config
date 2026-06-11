@@ -116,33 +116,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    #  wget
-    helix
-    yazi
-    git
-    lazygit
-    tmux
-    wl-clipboard
     home-manager
-    google-chrome
-    jq
-    fzf
-    httpie
-    opencode
+
+    # Fonts
     nerd-fonts.jetbrains-mono
 
-    alacritty
-    dms-shell
-    xwayland-satellite
-    quickshell
-    dgop
-    cava
-    matugen
-
+    # Hardware / audio
     alsa-utils
     sof-firmware
     brightnessctl
+
+    # Wayland system integration
+    xwayland-satellite
   ];
 
   programs.niri.enable = true;
