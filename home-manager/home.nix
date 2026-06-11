@@ -43,6 +43,7 @@
 
     # Desktop / Wayland
     google-chrome
+    geary
     dms-shell
     quickshell
     dgop
