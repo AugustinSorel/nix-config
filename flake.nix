@@ -9,9 +9,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    helium-flake = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, helium-flake, ... } @ inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib;
@@ -35,7 +39,10 @@
       homeConfigurations = {
         augustin = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ ./home-manager/home.nix ];
+          modules = [
+            ./home-manager/home.nix
+            helium-flake.homeModules.default
+          ];
           extraSpecialArgs = {
             inherit inputs outputs;
           };

@@ -4,6 +4,7 @@
   imports = [
     outputs.homeManagerModules.git
     outputs.homeManagerModules.helix
+    outputs.homeManagerModules.helium
     outputs.homeManagerModules.niri
     outputs.homeManagerModules.shell
     outputs.homeManagerModules.tmux
