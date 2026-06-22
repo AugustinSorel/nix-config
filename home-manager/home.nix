@@ -41,6 +41,9 @@
     # Terminal / editor
     alacritty
 
+    # Media
+    playerctl
+
     # Desktop / Wayland
     google-chrome
     geary
