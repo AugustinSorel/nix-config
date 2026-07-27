@@ -51,6 +51,12 @@
       #typst
       tinymist
       typstyle
+
+      gopls
+      golangci-lint-langserver
+      gotools
+      golangci-lint
+      templ
     ];
 
     languages = {
