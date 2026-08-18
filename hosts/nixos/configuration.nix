@@ -99,7 +99,7 @@
   users.users."augustin" = {
     isNormalUser = true;
     description = "augustin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       #  thunderbird
     ];
