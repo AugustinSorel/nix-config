@@ -128,6 +128,8 @@
 
     # Wayland system integration
     xwayland-satellite
+
+    dsearch
   ];
 
   programs.niri.enable = true;
