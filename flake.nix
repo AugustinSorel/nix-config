@@ -13,9 +13,13 @@
       url = "github:oxcl/nix-flake-helium-browser";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    devenv = {
+      url = "github:cachix/devenv";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, helium-flake, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, helium-flake, devenv, ... } @ inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib;

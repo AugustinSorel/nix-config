@@ -1,4 +1,4 @@
-{ outputs, pkgs, ... }:
+{ inputs, outputs, pkgs, ... }:
 
 {
   imports = [
@@ -37,6 +37,7 @@
     fzf
     httpie
     opencode
+    inputs.devenv.packages.${pkgs.system}.devenv
 
     # Terminal / editor
     alacritty
