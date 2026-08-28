@@ -1,7 +1,8 @@
-{ inputs, outputs, pkgs, ... }:
+{ inputs, outputs, pkgs, config, ... }:
 
 {
   imports = [
+    inputs.sops-nix.homeManagerModules.sops
     outputs.homeManagerModules.git
     outputs.homeManagerModules.helix
     outputs.homeManagerModules.helium
@@ -9,6 +10,25 @@
     outputs.homeManagerModules.shell
     outputs.homeManagerModules.tmux
   ];
+
+  sops = {
+    defaultSopsFile = ../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
+
+    secrets = {
+      "personal_server/ip" = { };
+      "personal_server/key" = {
+        path = "${config.home.homeDirectory}/.ssh/personal_server_key";
+      };
+
+      "github/key" = {
+        path = "${config.home.homeDirectory}/.ssh/github_personal_key";
+      };
+
+      "azure_ai_foundry/key" = { };
+    };
+  };
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
