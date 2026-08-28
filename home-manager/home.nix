@@ -8,6 +8,7 @@
     outputs.homeManagerModules.helium
     outputs.homeManagerModules.niri
     outputs.homeManagerModules.shell
+    outputs.homeManagerModules.ssh
     outputs.homeManagerModules.tmux
   ];
 
@@ -17,7 +18,6 @@
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
 
     secrets = {
-      "personal_server/ip" = { };
       "personal_server/key" = {
         path = "${config.home.homeDirectory}/.ssh/personal_server_key";
       };

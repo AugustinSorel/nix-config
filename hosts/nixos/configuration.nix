@@ -16,6 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  networking.firewall.allowedTCPPorts = [ 8000 ];
 
   boot.extraModprobeConfig = ''
     options snd-hda-intel model=(null),alc287-yoga9-bass-spk-pin
