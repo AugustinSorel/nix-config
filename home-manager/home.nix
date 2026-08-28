@@ -7,6 +7,7 @@
     outputs.homeManagerModules.helix
     outputs.homeManagerModules.helium
     outputs.homeManagerModules.niri
+    outputs.homeManagerModules.opencode
     outputs.homeManagerModules.shell
     outputs.homeManagerModules.ssh
     outputs.homeManagerModules.tmux
@@ -56,7 +57,6 @@
     jq
     fzf
     httpie
-    opencode
     inputs.devenv.packages.${pkgs.system}.devenv
 
     # Terminal / editor
