@@ -23,35 +23,28 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, helium-flake, devenv, sops-nix, ... } @ inputs:
-    let
-      inherit (self) outputs;
-      lib = nixpkgs.lib;
-      system = "x86_64-linux";
-    in
-    {
-      nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/nixos ];
-          specialArgs = {
-            inherit inputs outputs;
-          };
-        };
+  outputs = inputs: {
+    nixosConfigurations = {
+      nixos = inputs.nixpkgs.lib.nixosSystem {
+        system = "86_64-linux";
+        modules = [
+          ./hosts/nixos/configuration.nix
+        ];
       };
+    };
 
-      homeConfigurations = {
-        augustin = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = [
-            ./home/augustin/home.nix
-          ];
-          extraSpecialArgs = {
-            sops-nix = sops-nix;
-            helium = helium-flake;
-            devenv = devenv;
-          };
+    homeConfigurations = {
+      augustin = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+        modules = [
+          ./home/augustin/home.nix
+        ];
+        extraSpecialArgs = {
+          sops-nix = inputs.sops-nix;
+          helium = inputs.helium-flake;
+          devenv = inputs.devenv;
         };
       };
     };
+  };
 }
