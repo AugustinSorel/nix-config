@@ -1,20 +1,22 @@
-{ inputs, outputs, pkgs, config, ... }:
+{ pkgs, devenv, helium, config, sops-nix, ... }:
 
 {
   imports = [
-    inputs.sops-nix.homeManagerModules.sops
-    outputs.homeManagerModules.git
-    outputs.homeManagerModules.helix
-    outputs.homeManagerModules.helium
-    outputs.homeManagerModules.niri
-    outputs.homeManagerModules.opencode
-    outputs.homeManagerModules.shell
-    outputs.homeManagerModules.ssh
-    outputs.homeManagerModules.tmux
+    sops-nix.homeManagerModules.sops
+    helium.homeModules.default
+
+    ./programs/git.nix
+    ./programs/helix.nix
+    ./programs/helium.nix
+    ./programs/niri.nix
+    ./programs/opencode.nix
+    ./programs/sh.nix
+    ./programs/ssh.nix
+    ./programs/tmux.nix
   ];
 
   sops = {
-    defaultSopsFile = ../secrets/secrets.yaml;
+    defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
 
@@ -57,7 +59,7 @@
     jq
     fzf
     httpie
-    inputs.devenv.packages.${pkgs.system}.devenv
+    devenv.packages.${pkgs.system}.devenv
 
     # Terminal / editor
     alacritty

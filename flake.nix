@@ -28,12 +28,8 @@
       inherit (self) outputs;
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeManagerModules = import ./modules/home-manager;
-      nixosModules = import ./modules/nixos;
-
       nixosConfigurations = {
         nixos = lib.nixosSystem {
           inherit system;
@@ -46,13 +42,14 @@
 
       homeConfigurations = {
         augustin = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [
-            ./home-manager/home.nix
-            helium-flake.homeModules.default
+            ./home/augustin/home.nix
           ];
           extraSpecialArgs = {
-            inherit inputs outputs;
+            sops-nix = sops-nix;
+            helium = helium-flake;
+            devenv = devenv;
           };
         };
       };
