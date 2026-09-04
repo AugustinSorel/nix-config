@@ -102,7 +102,7 @@
     isNormalUser = true;
     description = "augustin";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
+    packages = [
       #  thunderbird
     ];
   };
@@ -118,20 +118,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    home-manager
-
-    # Fonts
-    nerd-fonts.jetbrains-mono
-
     # Hardware / audio
     alsa-utils
     sof-firmware
     brightnessctl
-
-    # Wayland system integration
-    xwayland-satellite
-
-    dsearch
   ];
 
   programs.niri.enable = true;

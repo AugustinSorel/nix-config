@@ -43,6 +43,7 @@
     fzf
     httpie
     devenv.packages.${pkgs.system}.devenv
+    nerd-fonts.jetbrains-mono
 
     # Terminal / editor
     alacritty
@@ -58,6 +59,8 @@
     dgop
     cava
     matugen
+    dsearch
+    xwayland-satellite
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
