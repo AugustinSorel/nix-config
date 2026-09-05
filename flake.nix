@@ -13,10 +13,6 @@
       url = "github:oxcl/nix-flake-helium-browser";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    devenv = {
-      url = "github:cachix/devenv";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +38,6 @@
         extraSpecialArgs = {
           sops-nix = inputs.sops-nix;
           helium = inputs.helium-flake;
-          devenv = inputs.devenv;
         };
       };
     };

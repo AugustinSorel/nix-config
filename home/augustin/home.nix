@@ -1,4 +1,4 @@
-{ pkgs, devenv, helium, sops-nix, ... }:
+{ pkgs, helium, sops-nix, ... }:
 
 {
   imports = [
@@ -42,7 +42,7 @@
     jq
     fzf
     httpie
-    devenv.packages.${pkgs.system}.devenv
+    devenv
     nerd-fonts.jetbrains-mono
 
     # Terminal / editor
