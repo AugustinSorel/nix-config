@@ -17,6 +17,10 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    devenv = {
+      url = "github:cachix/devenv";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {
@@ -38,6 +42,7 @@
         extraSpecialArgs = {
           sops-nix = inputs.sops-nix;
           helium = inputs.helium-flake;
+          devenv = inputs.devenv;
         };
       };
     };
