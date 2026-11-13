@@ -259,6 +259,12 @@
         args = [ "--stdio" ];
       };
 
+      language-server.vscode-json-language-server.config = {
+        provideFormatter = true;
+        json.validate.enable = true;
+        jsonc.validate.enable = true;
+      };
+
       language-server.yaml-language-server.config.yaml = {
         format = { enable = true; };
         validation = true;
