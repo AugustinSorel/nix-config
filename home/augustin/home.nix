@@ -5,6 +5,7 @@
     sops-nix.homeManagerModules.sops
     helium.homeModules.default
 
+    ./programs/fzf.nix
     ./programs/git.nix
     ./programs/sops.nix
     ./programs/helix.nix
@@ -40,7 +41,6 @@
     lazygit
     wl-clipboard
     jq
-    fzf
     httpie
     devenv.packages.${pkgs.system}.devenv
     nerd-fonts.jetbrains-mono
